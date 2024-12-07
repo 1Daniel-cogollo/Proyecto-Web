@@ -1,0 +1,38 @@
+nav.Menu {
+    font-family: Arial, sans-serif;
+}
+
+.Menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.Menu-item {
+    position: relative;
+    text-decoration: none;
+    color: #000; /* Color destacado para los títulos */
+    font-size: 18px;
+    font-weight: bold; /* Hace el texto más grueso */
+    transition: color 0.3s ease;
+}
+
+.Menu-item:hover {
+    color: #007bff; /* Cambia de color al pasar el ratón */
+}
+
+.Menu-item::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.Menu-item:hover::after {
+    width: 100%;
+}
