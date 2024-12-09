@@ -26,12 +26,11 @@
         <button id="checkout" class="Checkout-btn">Proceder al Pago</button>
     </section>
 
-
     <nav class="Menu">
         <ul>
             <li><a href="#home" class="Menu-item" id="inicioLink">Inicio</a></li>
-            <li><a href="#" class="Menu-item">Servicios</a></li>
-            <li><a href="#" class="Menu-item">Contacto</a></li>
+            <li><a href="#" class="Menu-item">Accesorios</a></li>
+            <li><a href="#" class="Menu-item">Computadores</a></li>
             <li><a href="#" class="Menu-item">Perfil 🧑</a></li>
         </ul>
         <form class="Search-bar">
@@ -44,87 +43,25 @@
 
     <section id="home" class="Products">
         <div class="Product">
-            <img src="laptop.jpg" alt="Laptop" class="Product-image">
+            <img src="asus-strix.jpeg" alt="Laptop" class="Product-image">
             <div class="Product-info">
                 <h3>Portátil Asus Strix G15</h3>
-                <span class="Product-price">$1200</span>
+                <span class="Product-price">$4.500.000</span>
+                <p class="Product-specs">32 Gb Ram, 1Tb SSD, Pantalla 16, Procesador Amd Ryzen 7 5700H"</p>
+                <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 1200)">Añadir al Carrito</button>
+            </div>
+        </div>
+
+        <div class="Product">
+            <img src="asus-zenbook.jpeg" alt="Laptop" class="Product-image">
+            <div class="Product-info">
+                <h3>Portátil Asus Zenbook</h3>
+                <span class="Product-price">$1.500.000</span>
+                <p class="Product-specs">16 Gb Ram, 512Gb SSD, Pantalla 14, Procesador Amd Ryzen 5 5600U"</p>
                 <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 1200)">Añadir al Carrito</button>
             </div>
         </div>
         <!-- Repite para otros productos -->
     </section>
-    
-    <!-- Sección de productos -->
-    <section id="home" class="Products">
-        <div class="Product">
-            <img src="laptop.jpg" alt="Laptop" class="Product-image">
-            <div class="Product-info">
-                <span class="Product-price">$1,200</span>
-            </div>
-        </div>
-        <div class="Product">
-            <img src="smartphone.jpg" alt="Smartphone" class="Product-image">
-            <div class="Product-info">
-                <span class="Product-price">$800</span>
-            </div>
-        </div>
-        <div class="Product">
-            <img src="smartwatch.jpg" alt="Smartwatch" class="Product-image">
-            <div class="Product-info">
-                <span class="Product-price">$250</span>
-            </div>
-        </div>
-    </section>
-    <!-- Productos -->
-<section id="home" class="Products">
-    <div class="Product" onclick="openProductDetails()">
-        <img src="laptop.jpg" alt="Laptop" class="Product-image">
-        <div class="Product-info">
-            <h3>Portátil Asus Strix G15</h3>
-            <span class="Product-price">$1,200</span>
-            <p class="Product-specs">16GB, 512GB, AMD Ryzen 7</p>
-            <div class="Product-rating">
-                <span>⭐⭐⭐⭐☆</span> 34 opiniones
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="product-details" class="ProductDetails">
-    <div class="Product-details-container">
-        <img src="Laptop.jpeg" alt="Laptop" class="Product-image">
-        <div class="Product-details-info">
-            <h2>Portátil Asus Strix G15</h2>
-            <p>Especificaciones:</p>
-            <ul>
-                <li>Procesador: AMD Ryzen 7</li>
-                <li>RAM: 16GB</li>
-                <li>Almacenamiento: 512GB SSD</li>
-                <li>Sistema Operativo: Windows 11</li>
-                <li>Frecuencia de actualización: 144Hz</li>
-                <li>GPU: NVIDIA</li>
-            </ul>
-            <div class="Product-price">
-                <span>$1,200</span>
-            </div>
-            <div class="Product-quantity">
-                <button class="Quantity-btn" onclick="decreaseQuantity()">-</button>
-                <input type="number" id="quantity" value="1">
-                <button class="Quantity-btn" onclick="increaseQuantity()">+</button>
-            </div>
-            <div class="Product-comments">
-                <textarea placeholder="Deja tu comentario..."></textarea>
-                <button class="Submit-comment">Enviar comentario</button>
-            </div>
-            <div class="Product-rating">
-                <span>⭐⭐⭐⭐☆</span>
-                <button class="Like-btn">👍</button>
-                <button class="Dislike-btn">👎</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 </body>
 </html>

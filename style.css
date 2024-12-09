@@ -119,9 +119,10 @@ nav.Menu {
 
 
 .Search-bar {
-    display: flex;
+    display: flexbox;
     align-items: center;
     gap: 5px;
+    
 }
 
 
@@ -153,7 +154,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 40px;
 }
 
 
@@ -343,7 +344,7 @@ button:hover {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin: 60px auto;
     max-width: 500px;
     text-align: center;
 }
