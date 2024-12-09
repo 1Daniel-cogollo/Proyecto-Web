@@ -15,15 +15,44 @@
             <strong>Total:</strong> $<span id="cart-total">0.00</span>
         </div>
         <button id="clear-cart" class="Clear-cart">Vaciar Carrito</button>
+        <button id="checkout" class="Checkout">Pagar</button>
     </div>
 
-    <section id="cart" class="Cart">
-        <h2>Carrito de Compras 🛒</h2>
-        <div id="cart-items"></div>
-        <div class="Cart-total">
-            Total: <span id="cart-total">$0</span>
+    <section id="home" class="Products">
+        <div class="Product">
+            <div class="Product-inner">
+                <img src="asus-strix.jpeg" alt="Laptop" class="Product-image">
+                <div class="Product-info">
+                    <h3>Portátil Asus Strix G15</h3>
+                    <span class="Product-price">$4.500.000</span>
+                    <div class="Product-specs">
+                        <p>32 Gb Ram</p>
+                        <p>1Tb SSD</p>
+                        <p>Pantalla 16"</p>
+                        <p>Procesador Amd Ryzen 7 5700H</p>
+                    </div>
+                    <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 1200)">Añadir al Carrito</button>
+                </div>
+            </div>
         </div>
-        <button id="checkout" class="Checkout-btn">Proceder al Pago</button>
+
+        <div class="Product">
+            <div class="Product-inner">
+                <img src="asus-zenbook.jpeg" alt="Laptop" class="Product-image">
+                <div class="Product-info">
+                    <h3>Portátil Asus Zenbook</h3>
+                    <span class="Product-price">$1.500.000</span>
+                    <div class="Product-specs">
+                        <p>16 Gb Ram</p>
+                        <p>512Gb SSD</p>
+                        <p>Pantalla 14"</p>
+                        <p>Procesador Amd Ryzen 5 5600U</p>
+                    </div>
+                    <button class="Add-to-cart" onclick="addToCart('Portátil Asus Zenbook', 1500)">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <!-- Repite para otros productos -->
     </section>
 
     <nav class="Menu">
@@ -41,27 +70,22 @@
         </form>
     </nav>
 
-    <section id="home" class="Products">
-        <div class="Product">
-            <img src="asus-strix.jpeg" alt="Laptop" class="Product-image">
-            <div class="Product-info">
-                <h3>Portátil Asus Strix G15</h3>
-                <span class="Product-price">$4.500.000</span>
-                <p class="Product-specs">32 Gb Ram, 1Tb SSD, Pantalla 16, Procesador Amd Ryzen 7 5700H"</p>
-                <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 1200)">Añadir al Carrito</button>
-            </div>
-        </div>
+    <footer class="Footer">
+        <p>Página creada por:</p>
+        <ul>
+            <li>
+                <strong>Pablo Díaz</strong><br>
+                Correo: pabloediaz@unicesar.edu.co<br>
+                Celular: 3160439713
+            </li>
+            <li>
+                <strong>Daniel Cogollo</strong><br>
+                Correo: dandrescogollo@unicesar.edu.co<br>
+                Celular: 3114763047
+            </li>
+        </ul>
+        <p>Fecha de creación: Diciembre 2024</p>
+    </footer>
 
-        <div class="Product">
-            <img src="asus-zenbook.jpeg" alt="Laptop" class="Product-image">
-            <div class="Product-info">
-                <h3>Portátil Asus Zenbook</h3>
-                <span class="Product-price">$1.500.000</span>
-                <p class="Product-specs">16 Gb Ram, 512Gb SSD, Pantalla 14, Procesador Amd Ryzen 5 5600U"</p>
-                <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 1200)">Añadir al Carrito</button>
-            </div>
-        </div>
-        <!-- Repite para otros productos -->
-    </section>
 </body>
 </html>

@@ -1,91 +1,45 @@
-document.getElementById('inicioLink').addEventListener('click', function(e) {
-    e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+let cartItems = [];
 
-    // Usamos scrollIntoView para un desplazamiento suave
-    document.getElementById('home').scrollIntoView({
-        behavior: 'smooth',  // Desplazamiento suave
-        block: 'start'       // Desplaza la sección al inicio de la ventana
-    });
-});
-
-// Función para abrir la sección de detalles del producto
-function openProductDetails() {
-    document.getElementById('product-details').style.display = 'block';
-    window.scrollTo({ top: document.getElementById('product-details').offsetTop, behavior: 'smooth' });
+function addToCart(productName, price) {
+    cartItems.push({ name: productName, price: price });
+    updateCart();
 }
 
-// Funciones para aumentar o disminuir la cantidad
-function increaseQuantity() {
-    let quantity = document.getElementById('quantity');
-    quantity.value = parseInt(quantity.value) + 1;
+function removeItem(index) {
+    cartItems.splice(index, 1);
+    updateCart();
 }
 
-function decreaseQuantity() {
-    let quantity = document.getElementById('quantity');
-    if (quantity.value > 1) {
-        quantity.value = parseInt(quantity.value) - 1;
-    }
+function clearCart() {
+    cartItems = [];
+    updateCart();
 }
 
-const cart = []; // Array para almacenar los productos añadidos al carrito
-
-// Elementos del DOM para el carrito
-const cartItemsContainer = document.getElementById('cart-items');
-const cartTotalElement = document.getElementById('cart-total');
-
-// Añadir producto al carrito
-function addToCart(productName, productPrice) {
-    let existingProduct = cart.find(item => item.name === productName);
-    if (existingProduct) {
-        existingProduct.quantity++;
-    } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
-    }
-    updateCartUI();
-}
-
-// Actualizar contenido del carrito
-function updateCartUI() {
+function updateCart() {
     const cartItemsDiv = document.getElementById('cart-items');
-    const cartTotalSpan = document.getElementById('cart-total');
-    cartItemsDiv.innerHTML = ''; // Limpiar la vista actual del carrito
+    const cartTotal = document.getElementById('cart-total');
+    const cart = document.getElementById('cart');
 
+    cartItemsDiv.innerHTML = '';
     let total = 0;
-    cart.forEach(item => {
-        total += item.price * item.quantity;
-        const div = document.createElement('div');
-        div.textContent = `${item.name} x ${item.quantity} - $${item.price * item.quantity}`;
-        cartItemsDiv.appendChild(div);
+
+    cartItems.forEach((item, index) => {
+        total += item.price;
+        cartItemsDiv.innerHTML += `
+            <div class="Cart-item">
+                <span>${item.name}</span>
+                <span>$${item.price}</span>
+                <button onclick="removeItem(${index})">Eliminar</button>
+            </div>
+        `;
     });
 
-    cartTotalSpan.textContent = `$${total}`;
+    cartTotal.innerText = total.toFixed(2);
 }
 
-// Eliminar producto del carrito
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartUI();
-}
+document.getElementById('clear-cart').addEventListener('click', clearCart);
 
-// Vaciar carrito
-document.getElementById('clear-cart').addEventListener('click', () => {
-    cart.length = 0;
-    updateCartUI();
+document.getElementById('cart').addEventListener('click', () => {
+    const cart = document.getElementById('cart');
+    cart.classList.toggle('open');
 });
-
-// Añadir eventos de los productos
-document.querySelectorAll('.Product').forEach(product => {
-    product.addEventListener('click', () => {
-        const productName = product.querySelector('h3').textContent;
-        const productPrice = product.querySelector('.Product-price').textContent.replace('$', '');
-        addToCart(productName, productPrice);
-    });
-});
-
-// Procesar compra
-document.getElementById('checkout').addEventListener('click', function () {
-    alert('¡Compra realizada con éxito!');
-    cart = [];
-    updateCartUI();
-});
-
