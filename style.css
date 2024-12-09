@@ -1,77 +1,124 @@
-/* Estilo general para los productos */
-.Product {
-    perspective: 1000px;
-    width: 300px;
-    height: 400px;
-    margin: 20px;
-    display: inline-block;
-    transition: transform 0.5s;
-    position: relative;
-    overflow: hidden;  /* Añadido para evitar que sobresalga contenido */
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-/* Estructura interna para manejar la rotación */
+/* Menú principal */
+nav.Menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.Menu-item {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.Menu-item:hover {
+    color: #0056b3;
+}
+
+.Search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.Search-input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.Search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Productos */
+.Products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 20px;
+}
+
+.Product {
+    width: 300px;
+    perspective: 1000px;
+    position: relative;
+}
+
 .Product-inner {
-    width: 100%;
-    height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform 0.6s ease;
 }
 
 .Product:hover .Product-inner {
     transform: rotateY(180deg);
 }
 
-/* Estilo de la parte trasera del producto */
-.Product-info {
-    backface-visibility: hidden;
-    transition: opacity 0.6s ease 0.2s; /* Añadido retraso a la opacidad */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;  /* Lo hace invisible por defecto */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: rotateY(180deg); /* Asegura que el reverso se gire correctamente */
-}
-
-/* Hacer visible la información cuando se gire */
-.Product:hover .Product-info {
-    opacity: 1;
-}
-
-/* Estilo de la imagen en el frente del producto */
 .Product-image {
     width: 100%;
-    height: 70%;
+    height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo de los botones y texto en el producto */
+.Product-info {
+    background-color: #fff;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .Product-info h3 {
     font-size: 1.2rem;
-    margin: 10px 0;
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 .Product-price {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
-    text-align: center;
     color: #333;
+    margin-bottom: 10px;
 }
 
-.Product-specs {
+.Product-specs p {
     font-size: 0.9rem;
-    color: #555;
-    text-align: center;
-    margin-bottom: 15px;
+    color: #666;
 }
 
 .Add-to-cart {
@@ -79,6 +126,7 @@
     background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s;
@@ -88,112 +136,26 @@
     background-color: #45a049;
 }
 
-/* Menú principal */
-nav.Menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #ffffff;
-    padding: 10px 30px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-}
-
-/* Estilo de los ítems del menú */
-.Menu ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
-
-.Menu-item {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.Menu-item:hover {
-    color: #007bff;
-}
-
-/* Línea animada debajo de los elementos del menú */
-.Menu-item::after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-}
-
-.Menu-item:hover::after {
-    width: 100%;
-}
-
-/* Estilos de búsqueda */
-.Search-bar {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    position: fixed;
-    top: 50px;
-    right: 30px;
-    z-index: 10;
-}
-
-.Search-input {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    width: 200px;
-    transition: border-color 0.3s;
-}
-
-.Search-input:focus {
-    border-color: #007bff;
-}
-
-/* Sección de productos, con espacio encima */
-.Products {
-    margin-top: 100px; /* Añadido margen para separar los productos del menú */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* Estilo del carrito */
+/* Carrito */
 .Cart {
     position: fixed;
-    top: 20px;
+    top: 100px;
     right: 20px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     width: 300px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
     z-index: 1000;
-    max-height: 100px;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    cursor: pointer;  /* Indicamos que se puede hacer clic */
+    display: none;
 }
 
-/* Expandir el carrito cuando se le haga clic */
 .Cart.open {
-    max-height: 500px;
+    display: block;
 }
 
 .Cart h2 {
-    margin: 0;
-    font-size: 20px;
+    margin-top: 0;
     border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
 }
@@ -202,25 +164,21 @@ nav.Menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-.Cart-total {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: right;
+.Clear-cart, .Checkout {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .Clear-cart {
-    width: 100%;
-    padding: 10px;
     background-color: #ff4d4d;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .Clear-cart:hover {
@@ -228,42 +186,25 @@ nav.Menu {
 }
 
 .Checkout {
-    width: 100%;
-    padding: 10px;
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .Checkout:hover {
     background-color: #0056b3;
 }
 
-.Footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    color: #333;
-}
-
-.Footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.Footer ul li {
-    margin: 10px 0;
-}
-
-.Footer p {
-    margin: 5px 0;
-    font-weight: bold;
-    color: #555;
+/* Botón flotante */
+.Cart-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

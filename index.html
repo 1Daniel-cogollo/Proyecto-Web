@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Carrito de Compras</title>
 </head>
 <body>
+    <!-- Menú de navegación -->
+    <nav class="Menu">
+        <ul>
+            <li><a href="#home" class="Menu-item" id="inicioLink">Inicio</a></li>
+            <li><a href="#" class="Menu-item">Accesorios</a></li>
+            <li><a href="#" class="Menu-item">Computadores</a></li>
+            <li><a href="#" class="Menu-item">Perfil 🧑</a></li>
+        </ul>
+        <form class="Search-bar">
+            <input type="text" placeholder="Buscar" class="Search-input">
+            <button type="submit" class="Search-button">🔍</button>
+        </form>
+    </nav>
+
     <!-- Carrito de compras -->
     <div id="cart" class="Cart">
         <h2>Carrito de Compras</h2>
@@ -18,58 +32,47 @@
         <button id="checkout" class="Checkout">Pagar</button>
     </div>
 
+    <!-- Sección de productos -->
     <section id="home" class="Products">
         <div class="Product">
             <div class="Product-inner">
                 <img src="asus-strix.jpeg" alt="Laptop" class="Product-image">
                 <div class="Product-info">
                     <h3>Portátil Asus Strix G15</h3>
-                    <span class="Product-price">$4.500.000</span>
+                    <span class="Product-price">$4,500,000</span>
                     <div class="Product-specs">
                         <p>32 Gb Ram</p>
                         <p>1Tb SSD</p>
                         <p>Pantalla 16"</p>
-                        <p>Procesador Amd Ryzen 7 5700H</p>
+                        <p>Procesador AMD Ryzen 7 5700H</p>
                     </div>
-                    <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 1200)">Añadir al Carrito</button>
+                    <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 4500000)">Añadir al Carrito</button>
                 </div>
             </div>
         </div>
-
+        <!-- Más productos -->
         <div class="Product">
             <div class="Product-inner">
                 <img src="asus-zenbook.jpeg" alt="Laptop" class="Product-image">
                 <div class="Product-info">
-                    <h3>Portátil Asus Zenbook</h3>
-                    <span class="Product-price">$1.500.000</span>
+                    <h3>Portátil Asus Zenbook 14</h3>
+                    <span class="Product-price">$1,500,000</span>
                     <div class="Product-specs">
                         <p>16 Gb Ram</p>
                         <p>512Gb SSD</p>
                         <p>Pantalla 14"</p>
-                        <p>Procesador Amd Ryzen 5 5600U</p>
+                        <p>Procesador AMD Ryzen 5 5600U</p>
                     </div>
-                    <button class="Add-to-cart" onclick="addToCart('Portátil Asus Zenbook', 1500)">Añadir al Carrito</button>
+                    <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 4500000)">Añadir al Carrito</button>
                 </div>
             </div>
         </div>
-        <!-- Repite para otros productos -->
     </section>
 
-    <nav class="Menu">
-        <ul>
-            <li><a href="#home" class="Menu-item" id="inicioLink">Inicio</a></li>
-            <li><a href="#" class="Menu-item">Accesorios</a></li>
-            <li><a href="#" class="Menu-item">Computadores</a></li>
-            <li><a href="#" class="Menu-item">Perfil 🧑</a></li>
-        </ul>
-        <form class="Search-bar">
-            <button type="submit" class="Search-button">
-                🔍
-            </button>
-            <input type="text" placeholder="Buscar" class="Search-input">
-        </form>
-    </nav>
+    <!-- Botón para mostrar/ocultar el carrito -->
+    <button class="Cart-btn" id="toggle-cart">🛒 Ver Carrito</button>
 
+    <!-- Footer -->
     <footer class="Footer">
         <p>Página creada por:</p>
         <ul>
@@ -86,6 +89,6 @@
         </ul>
         <p>Fecha de creación: Diciembre 2024</p>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>

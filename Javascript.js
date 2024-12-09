@@ -1,7 +1,7 @@
 let cartItems = [];
 
 function addToCart(productName, price) {
-    cartItems.push({ name: productName, price: price });
+    cartItems.push({ name: productName, price });
     updateCart();
 }
 
@@ -16,11 +16,10 @@ function clearCart() {
 }
 
 function updateCart() {
-    const cartItemsDiv = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const cart = document.getElementById('cart');
+    const cartItemsDiv = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
 
-    cartItemsDiv.innerHTML = '';
+    cartItemsDiv.innerHTML = "";
     let total = 0;
 
     cartItems.forEach((item, index) => {
@@ -28,18 +27,18 @@ function updateCart() {
         cartItemsDiv.innerHTML += `
             <div class="Cart-item">
                 <span>${item.name}</span>
-                <span>$${item.price}</span>
+                <span>$${item.price.toLocaleString()}</span>
                 <button onclick="removeItem(${index})">Eliminar</button>
             </div>
         `;
     });
 
-    cartTotal.innerText = total.toFixed(2);
+    cartTotal.textContent = total.toLocaleString();
 }
 
-document.getElementById('clear-cart').addEventListener('click', clearCart);
+document.getElementById("clear-cart").addEventListener("click", clearCart);
 
-document.getElementById('cart').addEventListener('click', () => {
-    const cart = document.getElementById('cart');
-    cart.classList.toggle('open');
+document.getElementById("toggle-cart").addEventListener("click", () => {
+    const cart = document.getElementById("cart");
+    cart.classList.toggle("open");
 });
