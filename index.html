@@ -7,6 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Carrito de compras -->
+    <div id="cart" class="Cart">
+        <h2>Carrito de Compras</h2>
+        <div id="cart-items"></div>
+        <div class="Cart-total">
+            <strong>Total:</strong> $<span id="cart-total">0.00</span>
+        </div>
+        <button id="clear-cart" class="Clear-cart">Vaciar Carrito</button>
+    </div>
+
+    <section id="cart" class="Cart">
+        <h2>Carrito de Compras 🛒</h2>
+        <div id="cart-items"></div>
+        <div class="Cart-total">
+            Total: <span id="cart-total">$0</span>
+        </div>
+        <button id="checkout" class="Checkout-btn">Proceder al Pago</button>
+    </section>
+
+
     <nav class="Menu">
         <ul>
             <li><a href="#home" class="Menu-item" id="inicioLink">Inicio</a></li>
@@ -21,6 +41,18 @@
             <input type="text" placeholder="Buscar" class="Search-input">
         </form>
     </nav>
+
+    <section id="home" class="Products">
+        <div class="Product">
+            <img src="laptop.jpg" alt="Laptop" class="Product-image">
+            <div class="Product-info">
+                <h3>Portátil Asus Strix G15</h3>
+                <span class="Product-price">$1200</span>
+                <button class="Add-to-cart" onclick="addToCart('Portátil Asus Strix G15', 1200)">Añadir al Carrito</button>
+            </div>
+        </div>
+        <!-- Repite para otros productos -->
+    </section>
     
     <!-- Sección de productos -->
     <section id="home" class="Products">
