@@ -37,7 +37,7 @@
         <button id="clear-cart" class="Clear-cart">Vaciar Carrito</button>
         <button id="checkout" class="Checkout">Pagar</button>
     </div>
-    
+
     <!-- Sección de productos -->
     <section id="home" class="Products">
         <div class="Product">
@@ -72,9 +72,54 @@
                 </div>
             </div>
         </div>
+        <div class="Product">
+            <div class="Product-inner">
+                <img src="Mouse.jpeg" alt="Laptop" class="Product-image">
+                <div class="Product-info">
+                    <h3>Mouse Msi Gamer RGB</h3>
+                    <span class="Product-price">$141.000</span>
+                    <div class="Product-specs">
+                        <p>1 Ms (Tiempo de respuesta)</p>
+                        <p>Software para personalizacion</p>
+                    </div>
+                    <button class="Add-to-cart" onclick="addToCart('Mouse Msi Gamer RGB', 141000)">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div class="Product">
+            <div class="Product-inner">
+                <img src="Control-Gamesir.jpeg" alt="Laptop" class="Product-image">
+                <div class="Product-info">
+                    <h3>Control GameSir</h3>
+                    <span class="Product-price">$270.000</span>
+                    <div class="Product-specs">
+                        <p>Control Gamesir g7 </p>
+                        <p>Software para personalizacion</p>
+                        <p>Certificado por xbox"</p>
+                        <p>Incluye 1 mes de GamePass Ultimate</p>
+                    </div>
+                    <button class="Add-to-cart" onclick="addToCart('Control Gamesir', 270000)">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div class="Product">
+            <div class="Product-inner">
+                <img src="Teclado-RedDragon.jpeg" alt="Laptop" class="Product-image">
+                <div class="Product-info">
+                    <h3>Teclado RedDragon</h3>
+                    <span class="Product-price">$200.000</span>
+                    <div class="Product-specs">
+                        <p>Teclado RedDragon </p>
+                        <p>Software para personalizacion</p>
+                        <p>Luces RGB"</p>
+                        <p>Switches personalizables</p>
+                    </div>
+                    <button class="Add-to-cart" onclick="addToCart('Teclado RedDragon', 200000)">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Botón para mostrar/ocultar el carrito -->
     <button class="Cart-btn" id="toggle-cart">🛒 Ver Carrito</button>
 
     <!-- Footer -->
@@ -99,7 +144,6 @@
         </ul>
         <strong>Fecha de actualización: Diciembre 2024</strong>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

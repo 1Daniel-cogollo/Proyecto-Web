@@ -1,9 +1,9 @@
-/* General */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #b4b1b1; /* Negro claro */
+    background-color: #b4b1b1; 
     color: #333;
 }
 
@@ -13,7 +13,7 @@ nav.Menu {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #2937f3; /* Blanco en el encabezado */
+    background-color: #2937f3; 
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
@@ -25,10 +25,10 @@ nav.Menu {
 .Menu-links {
     list-style: none;
     display: flex;
-    gap: 30px; /* Espacio entre los elementos */
+    gap: 30px; 
     margin: 0;
     padding: 0;
-    justify-content: center; /* Centrado de las opciones */
+    justify-content: center; 
     flex-grow: 1;
 }
 
@@ -51,8 +51,8 @@ nav.Menu {
 
 /* Logo */
 .Logo h1 {
-    font-family: 'Poppins', sans-serif; /* Nueva fuente para el logo */
-    font-size: 2rem; /* Tamaño de fuente ajustado */
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2rem; 
     margin: 0;
     color: #ffffff;
 }
@@ -158,11 +158,11 @@ nav.Menu {
     border-radius: 8px;
     padding: 20px;
     z-index: 1000;
-    display: none; /* Oculto por defecto */
+    display: none; 
 }
 
 .Cart.open {
-    display: block; /* Mostrar carrito cuando se active */
+    display: block; 
 }
 
 .Cart h2 {
@@ -222,19 +222,19 @@ nav.Menu {
 
 /* Footer */
 .Footer {
-    background-color: #fff; /* Blanco */
-    padding: 10px; /* Reducir el padding para hacerlo más pequeño */
+    background-color: #fff; 
+    padding: 10px; 
     text-align: center;
-    font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    font-size: 0.9rem; 
 }
 
 .Footer p {
-    margin: 3px 0; /* Reducir el margen entre los elementos */
+    margin: 3px 0; 
 }
 
 @media (max-width: 768px) {
     .Menu-links {
-        flex-direction: column; /* Los enlaces se apilan verticalmente en pantallas pequeñas */
+        flex-direction: column; 
     }
 
     .Products {
